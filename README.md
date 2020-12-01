@@ -18,23 +18,36 @@ To build the model, we will use **DTM**, which was produced as part of the [SRTM
 ![contour](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/contour.png)
 
 In order to illustrate the height values of the various points, we chose to present in 3D the **Matterhorn Mountain** area. The data present using a customized version of code **3d-graph-gif**, the full documentation can be found here: [**create-3d-graph-gif**](https://github.com/EtzionR/create-3d-graph-gif):
+
 ![Matterhorn](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Matterhorn.gif)
 
 The file [**tags.csv**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tags.csv) contains the labels of each point: **'top'=1** for a mountain peak and **'top'=0** not a mountain peak. Using this tagging, we will extract the location of each point in the matrix [**tops.npy**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tops.npy). In order to identify whether each point is a peak or not, we will process each point together with The height points that surround it, so we get for each tagged point a **19X19 matrix**. An example of such a matrix (showing a mountaintop point) can be seen here:
+
 ![example 1](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/exm1.png)
 
-Now, based on the labels (Y) and the collection of matrices (X), we will perform the model training, based on 90% of the data we have. This is the model structure we built:
+Now, based on the tagged labels (Y) and the collection of matrices (X), we will perform the model training, based on 90% of the data we have. This is the model structure we built:
+
 ![model](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/model.png)
 
-We will now evaluate the forecast quality of the model, based on the remaining 10% of the data. The percentage of correct results of the model seems to be 97.3%, and we will also present the results of the loss values and accuracy along the different epochs of the model:
-<>
+To **evaluate** the prediction quality of the model, we based on the remaining 10% test records. The percentage of correct results of the model seems to be **97.3%**. In addition, we will present the results of the loss values and accuracy along the epochs of the model:
 
-Examining the errors we received from the model results, it can be seen that in some cases these are borderline situations, in some of which it seems that the incorrect result of the model sometimes seems to make sense:
-<>
+![eval](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/eval.png)
 
-We will export and save the model so that we can use it for future needs. The model is available at this link: D
+While examining the errors received from the model, it can be seen that in some cases might consider as borderline situations: in some of which it seems that the incorrect result sometimes seems to make sense:
+
+![error3](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/error3.png)
+
+Now, we would like to export the model so we can use it for future needs. The model is available at this link: [**Mountaintops_model.h5**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Model/Mountaintops_model.h5)
 
 ## libraries
+
+**tensorflow**
+
+**matplotlib**
+
+**pandas**
+
+**numpy**
 
 ## Application
 An application of the code is attached to this page under the name: 
@@ -84,19 +97,8 @@ data
 https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/Rheinwaldhorn.npy
 
 
-eval
-https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/eval.png
-
-should be mt, by look like vallay
-https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/error3.png
-
-model
-https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Model/Mountaintops_model.h5
-
 gifs
-https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Matterhorn.gif
 https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Rheinwaldhorn.gif
-https://github.com/EtzionR/create-3d-graph-gif
 
 
 
