@@ -48,11 +48,7 @@ After using the model prediction, we will paint in red the peaks identified, and
 
 ![Rheinwaldhorn_gif](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Rheinwaldhorn.gif)
 
-Full code for the model application process can be seen here:
-
-[**"implementation.ipynb"**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/implementation.ipynb)
-
-the examples outputs are also attached here.
+Full code for the model application process can be seen here: [**"implementation.ipynb"**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/implementation.ipynb)
 
 ## Using the model
 To use this model, you just need to import it as follows:
