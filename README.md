@@ -2,10 +2,10 @@
 Identification of mountain peaks using a Neural Network.
 
 ![alps](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Valais_mountain.jpg)
-Source: [Wikimedia](https://commons.wikimedia.org/wiki/Matterhorn#/media/File:Valais_mountains.jpg)
+Image source: [Wikimedia](https://commons.wikimedia.org/wiki/Matterhorn#/media/File:Valais_mountains.jpg)
 
 ## Introduction
-We want to automatically identify the mountain peaks and for this we will use code [**Find_Mountaintops.ipynb**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Find_Mountaintops.ipynb) based on a **Neural Network**.
+We want to automatically identify the mountain peaks and for this we will use code [**Find_Mountaintops.ipynb**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Find_Mountaintops.ipynb) based on a **Neural Network Model**.
 
 In order to build the model, we will select proper area for **training and testing** the model. The area chosed located in the **Alps Mountains**, on the border between Italy and Switzerland. These are the boundaries of the defined area (wgs84 geo dd):
 - **north:** 46.864583
@@ -20,11 +20,11 @@ To build the model, we will use **DTM**, which was produced as part of the [SRTM
 In order to illustrate the height values of the various points, we chose to present in 3D the **Matterhorn Mountain** area. The data present using a customized version of code **3d-graph-gif**, the full documentation can be found here: [**create-3d-graph-gif**](https://github.com/EtzionR/create-3d-graph-gif):
 ![Matterhorn](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Matterhorn.gif)
 
-The labels of each point as describing a summit (1) or not (0) will be extracted from the file C. Using this tagging, we will extract the location of each point in file A. In order to identify whether each point is a summit or not, we will process each point together with The height points that surround it, so we get for each point a 19X19 matrix. An example of such a matrix (showing a summit point) can be seen here:
-<>
+The file [**tags.csv**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tags.csv) contains the labels of each point: **'top'=1** for a mountain peak and **'top'=0** not a mountain peak. Using this tagging, we will extract the location of each point in the matrix [**tops.npy**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tops.npy). In order to identify whether each point is a peak or not, we will process each point together with The height points that surround it, so we get for each tagged point a **19X19 matrix**. An example of such a matrix (showing a mountaintop point) can be seen here:
+![example 1](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/exm1.png)
 
 Now, based on the labels (Y) and the collection of matrices (X), we will perform the model training, based on 90% of the data we have. This is the model structure we built:
-<>
+![model](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/model.png)
 
 We will now evaluate the forecast quality of the model, based on the remaining 10% of the data. The percentage of correct results of the model seems to be 97.3%, and we will also present the results of the loss values and accuracy along the different epochs of the model:
 <>
@@ -73,8 +73,8 @@ https://www.google.com/maps/place/Matterhorn/@45.973403,7.6841342,5771m/
 Rheinwaldhorn
 https://www.google.com/maps/place/Rheinwaldhorn/@46.4940234,9.0335184,6473m
 
-code
-https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Find_Mountaintops.ipynb
+
+
 
 implementation
 https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/implementation.ipynb
@@ -82,7 +82,7 @@ https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/implementatio
 data
 
 https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/Rheinwaldhorn.npy
-https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tags.csv
+
 
 eval
 https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/eval.png
