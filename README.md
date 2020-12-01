@@ -17,7 +17,7 @@ To build the model, we will use **DTM**, which was produced as part of the [SRTM
 
 ![contour](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/contour.png)
 
-In order to illustrate the height values of the various points, we chose to present in 3D the **Matterhorn Mountain** area. The data present using a customized version of code **3d-graph-gif**, the full documentation can be found here: [**create-3d-graph-gif**](https://github.com/EtzionR/create-3d-graph-gif):
+In order to illustrate the height values of the various points, we chose to present in 3D the [**Matterhorn Mountain**](https://www.google.com/maps/place/Matterhorn/@45.973403,7.6841342,5771m/) area. The data present using a customized version of code **3d-graph-gif**, the full documentation can be found here: [**create-3d-graph-gif**](https://github.com/EtzionR/create-3d-graph-gif):
 
 ![Matterhorn](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Matterhorn.gif)
 
@@ -25,7 +25,7 @@ The file [**tags.csv**](https://github.com/EtzionR/Finding-Mountaintops-using-DL
 
 ![example 1](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/exm1.png)
 
-Now, based on the tagged labels (Y) and the collection of matrices (X), we will perform the model training, based on 90% of the data we have. This is the model structure we built:
+Now, based on the tagged labels (Y) and the array of the matrices (X), we will perform the model training, based on 90% of the data we have. This is the model structure we built:
 
 ![model](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/model.png)
 
@@ -39,7 +39,43 @@ While examining the errors received from the model, it can be seen that in some 
 
 Now, we would like to export the model so we can use it for future needs. The model is available at this link: [**Mountaintops_model.h5**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Model/Mountaintops_model.h5)
 
-## libraries
+## Model Application
+Now, we want to use the model on new data. To do this, we will select as an example the area of [**Rheinwaldhorn Mountain**](https://www.google.com/maps/place/Rheinwaldhorn/@46.4940234,9.0335184,6473m). Like the data we dealt with earlier, the information about the new area is also stored as a numpy matrix, here: [Rheinwaldhorn.npy](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/Rheinwaldhorn.npy). We will examine the data:
+
+![Rheinwaldhorn area](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/rhn.png)
+
+After using the model prediction, we will paint in red the peaks identified, and present the result in 3D:
+
+![Rheinwaldhorn_gif](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Rheinwaldhorn.gif)
+
+Full code for the model application process can be seen here:
+
+[**"implementation.ipynb"**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/implementation.ipynb)
+
+the examples outputs are also attached here.
+
+## Using the model
+To use this model, you just need to import it as follows:
+``` sh
+# import
+from tensorflow import keras
+
+# load model
+model = keras.models.load_model(r'Model\Mountaintops_model.h5')
+
+# load X
+X = ...
+
+# application
+Y_prediction = np.round(model.predict(X),0)
+```
+
+## Variables
+
+**X:** some.
+
+
+## Libraries
 
 **tensorflow**
 
@@ -49,56 +85,6 @@ Now, we would like to export the model so we can use it for future needs. The mo
 
 **numpy**
 
-## Application
-An application of the code is attached to this page under the name: 
-
-[**"implementation.ipynb"**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/implementation.ipynb)
-
-the examples outputs are also attached here.
-
-## Using the code
-To use this code, you just need to import it as follows:
-``` sh
-
-```
-
-
-## Variables
-
-**X:** some.
 
 ## License
 MIT © [Etzion Harari](https://github.com/EtzionData)
-
-
-Area
-
-
-train 90%
-test 10%
-
-srtm
-
-
-Matterhorn
-https://www.google.com/maps/place/Matterhorn/@45.973403,7.6841342,5771m/
-
-Rheinwaldhorn
-https://www.google.com/maps/place/Rheinwaldhorn/@46.4940234,9.0335184,6473m
-
-
-
-
-implementation
-https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/implementation.ipynb
-
-data
-
-https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/Rheinwaldhorn.npy
-
-
-gifs
-https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Rheinwaldhorn.gif
-
-
-
