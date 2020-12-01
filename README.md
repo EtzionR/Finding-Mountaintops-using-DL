@@ -1,7 +1,8 @@
 # Finding-Mountaintops-using-DL
 Identification of mountain peaks using a Neural Network.
-![alps](https://commons.wikimedia.org/wiki/Matterhorn#/media/File:Valais_mountains.jpg)
 
+![alps](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Valais_mountains.jpg)
+Source: [Wikimedia](https://commons.wikimedia.org/wiki/Matterhorn#/media/File:Valais_mountains.jpg)
 
 ## Introduction
 We want to automatically identify the mountain peaks and for this we will use code [**Find_Mountaintops.ipynb**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Find_Mountaintops.ipynb) based on a **Neural Network**.
