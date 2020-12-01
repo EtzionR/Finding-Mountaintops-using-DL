@@ -72,7 +72,7 @@ Y_prediction = np.round(model.predict(X),0)
 
 ## Variables
 
-**X:** some.
+**X:** numpy.array which contain 19x19 matrices of np.floats
 
 
 ## Libraries
