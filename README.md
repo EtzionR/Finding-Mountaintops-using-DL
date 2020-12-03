@@ -44,7 +44,7 @@ Now, we want to use the model on new data. To do this, we will select as an exam
 
 ![Rheinwaldhorn area](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/rhn.png)
 
-After using the model prediction, we will paint in red the peaks identified, and present the result in 3D:
+After using the model prediction, we will paint in red the peaks and mountain ranges identified, and present the result in 3D:
 
 ![Rheinwaldhorn_gif](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Rheinwaldhorn.gif)
 
