@@ -13,19 +13,19 @@ In order to build the model, we will select proper area for **training and testi
 - **East:** 8.878750
 - **West:** 7.250417
 
-To build the model, we will use **DTM**, which was produced as part of the [SRTM](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission) project. The data downloaded from this website [srtmdata](http://srtm.csi.cgiar.org/srtmdata/) and transferred to a **numpy matrix**. The file contain a grid of points which each point value indicates its **height** in meters above sea level. The **tops** matrix, contain 1955 rows, 1414 columns and a total of **2,764,370** height points. The file save as [**tops.npy**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tops.npy). Now, we plot the tops matrix:
+To build the model, we will use **DTM**, which was produced as part of the [SRTM](https://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission) project. The data downloaded from this website [srtmdata](http://srtm.csi.cgiar.org/srtmdata/) and transferred to a **numpy matrix**. The martix contain a grid of points which each point value indicates its **height** in meters above sea level. The **tops** matrix, contain 1955 rows, 1414 columns and a total of **2,764,370** height points. The file save as [**tops.npy**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tops.npy). Now, we plot the tops matrix:
 
 ![contour](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/contour.png)
 
-In order to illustrate the height values of the various points, we chose to present in 3D the [**Matterhorn Mountain**](https://www.google.com/maps/place/Matterhorn/@45.973403,7.6841342,5771m/) area. The data present using a customized version of code **3d-graph-gif**, the full documentation can be found here: [**create-3d-graph-gif**](https://github.com/EtzionR/create-3d-graph-gif):
+In order to illustrate the height values of the points, we chose to present in 3D the specific area from the matrix. The selcted area is [**Matterhorn Mountain**](https://www.google.com/maps/place/Matterhorn/@45.973403,7.6841342,5771m/) area. The data present using a adapt version of the **3d-graph-gif** code, full documentation can be found here: [**create-3d-graph-gif**](https://github.com/EtzionR/create-3d-graph-gif):
 
 ![Matterhorn](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Matterhorn.gif)
 
-The file [**tags.csv**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tags.csv) contains the labels of each point: **'top'=1** for a mountain peak and **'top'=0** not a mountain peak. Using this tagging, we will extract the location of each point in the matrix [**tops.npy**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tops.npy). In order to identify whether each point is a peak or not, we will process each point together with The height points that surround it, so we get for each tagged point a **19X19 matrix**. An example of such a matrix (showing a mountaintop point) can be seen here:
+The file [**tags.csv**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tags.csv) contains the labels of each point: **'top'=1** means mountain peak and **'top'=0** means not a mountain peak. Using this tagging, we will extract the location (row + column) of each point in the matrix [**tops.npy**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tops.npy). In order to identify whether each point is a peak or not, we will process each point together with The height points that surround it, so we get for each tagged point a **19X19 matrix**. An example of such a matrix (showing a mountaintop point) can be seen here:
 
 ![example 1](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/exm1.png)
 
-Now, based on the tagged labels (Y) and the array of the matrices (X), we will perform the model training, based on 90% of the data we have. This is the model structure we built:
+Now, based on the tagged labels (Y) and the array of matrices (X), we will perform the model training, based on 90% of the data we have. This is the model structure:
 
 ![model](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/model.png)
 
@@ -33,14 +33,14 @@ To **evaluate** the prediction quality of the model, we based on the remaining 1
 
 ![eval](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/eval.png)
 
-While examining the errors received from the model, it can be seen that in some cases might consider as borderline situations: in some of which it seems that the incorrect result sometimes seems to make sense:
+While examining the errors received from the model, it can be seen that in some cases might consider as controversial situations: in some of this cases its seems that the  result consider incorrect sometimes seems to make sense:
 
 ![error3](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/error3.png)
 
 Now, we would like to export the model so we can use it for future needs. The model is available at this link: [**Mountaintops_model.h5**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Model/Mountaintops_model.h5)
 
 ## Model Application
-Now, we want to use the model on new data. To do this, we will select as an example the area of [**Rheinwaldhorn Mountain**](https://www.google.com/maps/place/Rheinwaldhorn/@46.4940234,9.0335184,6473m). Like the data we dealt with earlier, the information about the new area is also stored as a numpy matrix, here: [Rheinwaldhorn.npy](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/Rheinwaldhorn.npy). We will examine the data:
+Now, we want to use the model on new data. To do this, we will select as an example the area of [**Rheinwaldhorn Mountain**](https://www.google.com/maps/place/Rheinwaldhorn/@46.4940234,9.0335184,6473m). This new area not included in the boundaries of the old area which we used to build the model. As with the data we dealt with earlier, the information about the new area also should stored as a numpy matrix: [Rheinwaldhorn.npy](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/Rheinwaldhorn.npy). We will examine the data:
 
 ![Rheinwaldhorn area](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/rhn.png)
 
@@ -48,12 +48,14 @@ After using the model prediction, we will paint in red the peaks identified, and
 
 ![Rheinwaldhorn_gif](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Rheinwaldhorn.gif)
 
+As can be seen, the model was able to successfully identify the peaks along the mountain ranges.
+
 Full code for the model application process can be seen here: [**"implementation.ipynb"**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/implementation.ipynb)
 
 ## Using the model
 To use this model, you just need to import it as follows:
 ``` sh
-# import
+# import tensorflow
 from tensorflow import keras
 
 # load model
