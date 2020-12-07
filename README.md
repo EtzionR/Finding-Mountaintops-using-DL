@@ -31,7 +31,7 @@ Now, based on the tagged labels (Y) and the array of matrices (X), we will perfo
 
 To **evaluate** the prediction quality of the model, we based on the remaining 10% test records. The percentage of correct results of the model seems to be **97.3%**. In addition, we will present the results of the loss values and accuracy along the epochs of the model:
 
-![eval](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/eval.png)
+![eval](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/evl.png)
 
 While examining the errors received from the model, it can be seen that in some cases might consider as controversial situations: in some of this cases its seems that the  result consider incorrect sometimes seems to make sense:
 
