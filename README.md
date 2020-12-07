@@ -21,7 +21,7 @@ In order to illustrate the height values of the points, we chose to present in 3
 
 ![Matterhorn](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Matterhorn.gif)
 
-The file [**tags.csv**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tags.csv) contains the labels of each point: **'top'=1** means mountain peak and **'top'=0** means not a mountain peak. Using this tagging, we will extract the location (row + column) of each point in the matrix [**tops.npy**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tops.npy). In order to identify whether each point is a peak or not, we will process each point together with The height points that surround it, so we get for each tagged point a **19X19 matrix**. An example of such a matrix (showing a mountaintop point) can be seen here:
+The file [**tags.csv**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tags.csv) contains **75508 labels** of each point: **'top'=1** means mountain peak and **'top'=0** means not a mountain peak. Using this tagging, we will extract the location (row + column) of each point in the matrix [**tops.npy**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tops.npy). In order to identify whether each point is a peak or not, we will process each point together with The height points that surround it, so we get for each tagged point a **19X19 matrix**. An example of such a matrix (showing a mountaintop point) can be seen here:
 
 ![example 1](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/exm1.png)
 
@@ -35,7 +35,7 @@ To **evaluate** the prediction quality of the model, we based on the remaining 1
 
 While examining the errors received from the model, it can be seen that in some cases might consider as controversial situations: in some of this cases its seems that the  result consider incorrect sometimes seems to make sense:
 
-![error3](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/error3.png)
+![error9](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/error9.png)
 
 Now, we would like to export the model so we can use it for future needs. The model is available at this link: [**Mountaintops_model.h5**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Model/Mountaintops_model.h5)
 
