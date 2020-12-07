@@ -1,5 +1,5 @@
 # Finding-Mountaintops-using-DL
-Identification of mountain peaks using a Neural Network.
+Identification of mountain peaks using a Artificial Neural Network.
 
 ![alps](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Valais_mountain.jpg)
 Image source: [Wikimedia](https://commons.wikimedia.org/wiki/Matterhorn#/media/File:Valais_mountains.jpg)
