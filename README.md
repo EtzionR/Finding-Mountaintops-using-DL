@@ -21,7 +21,7 @@ In order to illustrate the height values of the points, we chose to present in 3
 
 ![Matterhorn](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Matterhorn.gif)
 
-The file [**tags.csv**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tags.csv) contains **75508 labels** of each point: **'top'=1** means mountain peak and **'top'=0** means not a mountain peak. Using this tagging, we will extract the location (row + column) of each point in the matrix [**tops.npy**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tops.npy). In order to identify whether each point is a peak or not, we will process each point together with The height points that surround it, so we get for each tagged point a **19X19 matrix**. An example of such a matrix (showing a mountaintop point) can be seen here:
+The file [**tags.csv**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tags.csv) contains **75508 label** points: **'top'=1** means mountain peak and **'top'=0** means not a mountain peak. Using this tagging, we will extract the location (row + column) of each point in the matrix [**tops.npy**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/tops.npy). In order to identify whether each point is a peak or not, we will process each point together with The height points that surround it, so we get for each tagged point a **19X19 matrix**. An example of such a matrix (showing a mountaintop point) can be seen here:
 
 ![example 1](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/exm1.png)
 
