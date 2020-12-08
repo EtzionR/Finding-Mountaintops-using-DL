@@ -40,9 +40,11 @@ While examining the errors received from the model, it can be seen that in some 
 Now, we would like to export the model so we can use it for future needs. The model is available at this link: [**Mountaintops_model.h5**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Model/Mountaintops_model.h5)
 
 ## Model Application
-Now, we want to use the model on new data. To do this, we will select as an example the area of [**Rheinwaldhorn Mountain**](https://www.google.com/maps/place/Rheinwaldhorn/@46.4940234,9.0335184,6473m). This new area not included in the boundaries of the old area which we used to build the model. As with the data we dealt with earlier, the information about the new area also should stored as a numpy matrix: [Rheinwaldhorn.npy](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/Rheinwaldhorn.npy). We will examine the data:
+Now, we want to use the model on new data. To do this, we will select as an example the area of [**Rheinwaldhorn Mountain**](https://www.google.com/maps/place/Rheinwaldhorn/@46.4940234,9.0335184,6473m). This new area not included in the boundaries of the old area which we used to build the model. As with the data we dealt with earlier, the information about the new area also should stored as a numpy matrix: [Rheinwaldhorn.npy](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Data/Rheinwaldhorn.npy).
 
-![Rheinwaldhorn area](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/rhn.png)
+We should denfie scanning boundary from the selected area. This limitation is due to the fact that we want to examine each point next to the surrounding height points.
+
+![Rheinwaldhorn area](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/rhn_.png)
 
 After using the model prediction, we will paint in red the peaks identified, and present the result in 3D:
 
