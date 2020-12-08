@@ -5,7 +5,7 @@ Identification of mountain peaks using a Artificial Neural Network.
 Image source: [Wikimedia](https://commons.wikimedia.org/wiki/Matterhorn#/media/File:Valais_mountains.jpg)
 
 ## Introduction
-In order to automatically identify mountain peaks and ranges. To do so, we will use the code [**Find_Mountaintops.ipynb**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Find_Mountaintops.ipynb) to create **Neural Network Model**. Our goal is to identify using this model whatever some point desrcibe mountain range or peak.
+Our goal is to automatically identify mountain peaks. To do so, we will use the code [**Find_Mountaintops.ipynb**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Find_Mountaintops.ipynb) to create **Neural Network Model**. Our goal is to identify using this model whatever some point desrcibe mountain peak.
 
 In order to build the model, we will select proper area for **training and testing** the model. The area chosed located in the **Alps Mountains**, on the border between Italy and Switzerland. These are the boundaries of the defined area (wgs84 geo dd):
 - **north:** 46.864583
@@ -44,11 +44,11 @@ Now, we want to use the model on new data. To do this, we will select as an exam
 
 ![Rheinwaldhorn area](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/rhn.png)
 
-After using the model prediction, we will paint in red the peaks and mountain ranges identified, and present the result in 3D:
+After using the model prediction, we will paint in red the peaks identified, and present the result in 3D:
 
 ![Rheinwaldhorn_gif](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Rheinwaldhorn.gif)
 
-As can be seen, the model was able to successfully identify the peaks along the mountain ranges.
+As can be seen, the model was able to successfully identify the peaks.
 
 Full code for the model application process can be seen here: [**"implementation.ipynb"**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/implementation.ipynb)
 
