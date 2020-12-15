@@ -44,9 +44,13 @@ Now, we want to use the model on new data. To do this, we will select as an exam
 
 We should denfie scanning boundary from the selected area. This limitation is due to the fact that we want to examine each point next to the surrounding height points.
 
-![Rheinwaldhorn area](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/rhn_.png)
+![Rheinwaldhorn area](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/before.png)
 
-After using the model prediction, we will paint in red the peaks identified, and present the result in 3D:
+After using the model prediction, we will paint in red the peaks identified and check the results:
+
+![Rheinwaldhorn area2](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/after.png)
+
+We would like also to present the result in 3D:
 
 ![Rheinwaldhorn_gif](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Rheinwaldhorn.gif)
 
