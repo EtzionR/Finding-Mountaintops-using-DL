@@ -4,7 +4,7 @@ Identification of mountain peaks using a Artificial Neural Network.
 ![alps](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/pictures/Valais_mountain.jpg)
 Image source: [Wikimedia](https://commons.wikimedia.org/wiki/Matterhorn#/media/File:Valais_mountains.jpg)
 
-## Introduction
+## Overview
 Our goal is to automatically identify mountain peaks. To do so, we will use the code [**Find_Mountaintops.ipynb**](https://github.com/EtzionR/Finding-Mountaintops-using-DL/blob/main/Find_Mountaintops.ipynb) to create **Neural Network Model**. Our goal is to identify using this model whatever some point desrcibe mountain peak.
 
 In order to build the model, we will select proper area for **training and testing** the model. The area chosed located in the **Alps Mountains**, on the border between Italy and Switzerland. These are the boundaries of the defined area (wgs84 geo dd):
